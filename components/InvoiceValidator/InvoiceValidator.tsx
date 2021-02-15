@@ -3,7 +3,7 @@ import React from "react";
 
 const InvoiceValidator = () => {
   return (
-    <div>
+    <div className="container">
       <Description />
       This is good....ss
     </div>

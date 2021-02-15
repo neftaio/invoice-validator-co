@@ -4,9 +4,9 @@ import React from "react";
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
-    <div className="mx-5 min-h-screen">
+    <div className="px-4 min-h-screen sm:px-8">
       <Header />
-      <div className="-mb-12 h-full">{children}</div>
+      <div className="">{children}</div>
       <Footer />
     </div>
   );

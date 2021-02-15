@@ -15,16 +15,23 @@ module.exports = {
 				},
 				redr: {
 					1000: '#ff0000'
+				},
+				blackr: {
+					1000: '#131313'
 				}
 			},
-			fontFamily: {
+			fontSize: {
+				'xxs': '0.5rem',
+				'xxxs': '0.25re'
+			},
+		},
+		fontFamily: {
 				'sans': ['ui-sans-serif', 'system-ui'],
 				'serif': ['ui-serif', 'Georgia'],
 				'mono': ['ui-monospace', 'SFMono-Regular'],
 				'quickSand': ['Quicksand', 'sans-serif'],
 				'pressStart': ['"Press Start 2P"', 'cursive']
-			}
-		},
+			},
   },
   variants: {
     extend: {},
