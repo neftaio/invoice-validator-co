@@ -19,7 +19,7 @@ const Description: React.FC = () => {
       </h2>
       <p className="font-quickSand text-gray-50 font-semibold tracking-wider pl-1 mb-4 md:mb-8 text-justify text-xs sm:text-base">
         Para su uso ingrese el archivo .xml dentro del campo indicado y de click
-        a validarm.
+        a validar.
       </p>
     </div>
   );
