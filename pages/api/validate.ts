@@ -50,12 +50,12 @@ const FormatMultileSchemaResults = (
   return schemasValidated.reduce((acc, schema) => {
     acc.push({
       text: `Tipo evaluado: ${schema.name}`,
-      alerttype: AlertType.SUCCESS,
+      alerttype: AlertType.WARNING,
     });
     acc = acc.concat(schema.validated);
     acc.push({
-      text: "=====================================================",
-      alerttype: AlertType.SUCCESS,
+      text: "=========================",
+      alerttype: AlertType.WARNING,
     });
     return acc;
   }, []);

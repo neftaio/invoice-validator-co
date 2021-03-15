@@ -19,6 +19,9 @@ const InvoiceValidator: React.FC = () => {
 
   const dispatchMessage = (msg: Alert[]) => {
     setMessage(msg);
+    if (msg.length) {
+      setOpenMessage(true);
+    }
   };
 
   const dispatchXmlBody = (xml: string) => {

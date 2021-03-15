@@ -1,6 +1,6 @@
 import InvoiceContext from "@components/InvoiceContext";
 import { AlertType } from "enums";
-import React, { useContext, useState } from "react";
+import React, { useContext, useRef, useState } from "react";
 
 const InvoiceReader: React.FC = () => {
   const [validated, setValidated] = useState<number>(1);
@@ -14,6 +14,18 @@ const InvoiceReader: React.FC = () => {
     message,
   } = useContext(InvoiceContext);
 
+  const fileRef = useRef<HTMLInputElement>(null);
+
+  const reset = () => {
+    fileRef.current.value = null;
+
+    handleOpenMessage(false);
+
+    dispatchXmlBody("");
+
+    setFileName("");
+  };
+
   const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     handleOpenMessage(false);
 
@@ -23,7 +35,15 @@ const InvoiceReader: React.FC = () => {
 
     const [file] = e.target.files;
 
-    if (!file) return;
+    if (!file) {
+      handleOpenMessage(false);
+
+      dispatchXmlBody("");
+
+      setFileName("");
+
+      return;
+    }
 
     const { name, size, type: fileType } = file;
 
@@ -80,10 +100,19 @@ const InvoiceReader: React.FC = () => {
             className="hidden"
             onChange={handleOnChange}
             accept=".xml"
+            ref={fileRef}
           />
         </label>
       </div>
       <div className="text-center mt-2">{fileName}</div>
+      <div className="flex justify-end">
+        <button
+          className="border border-solid font-semibold text-redr-1000 border-redr-1000 rounded-md shadow-lg px-2 cursor-pointer text-sm hover:bg-redr-1000 hover:text-black focus:bg-redr-1000 focus:text-black"
+          onClick={reset}
+        >
+          Limpiar
+        </button>
+      </div>
     </>
   );
 };

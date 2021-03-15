@@ -8,7 +8,7 @@ const Message: React.FC = () => {
   return (
     <>
       {openMessage ? (
-        <div className="border-2 border-solid border-greenr-1000 mt-4 px-4 py-4 rounded-lg bg-black">
+        <div className="border-2 border-solid border-greenr-1000 mt-4 px-4 py-4 rounded-lg bg-black break-words">
           {message.map((msg, index) => (
             <div
               key={index}
