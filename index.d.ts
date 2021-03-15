@@ -2,13 +2,29 @@ type LayoutProps = {
   children?: React.ReactNode;
 };
 
+type Alert = {
+  text: string;
+  alerttype: AlertType;
+};
+
 type InvoiceData = {
-  message?: string;
+  message: Alert[];
   openMessage: boolean;
-  xmlBody: string;
+  xmlBody: string | ArrayBuffer;
   validationDescription: string;
   handleOpenMessage: (open: boolean) => void;
-  dispatchMessage: (msg: string) => void;
-  dispatchXmlBody: (xml: string) => void;
+  dispatchMessage: (msg: Alert[]) => void;
+  dispatchXmlBody: (xml: string | ArrayBuffer) => void;
   dispatchValidationDescription: (description: string) => void;
+};
+
+type SchemaFiles = {
+  name: string;
+  path: string;
+};
+
+type SchemaValidated = {
+  name: string;
+  path: string;
+  validated: Alert[];
 };

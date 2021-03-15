@@ -9,7 +9,7 @@ const dispatchXmlBody = () => {};
 const dispatchValidationDescription = () => {};
 
 const invoiceData: InvoiceData = {
-  message: "",
+  message: [],
   openMessage: false,
   xmlBody: "",
   validationDescription: "",

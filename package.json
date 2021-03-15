@@ -8,6 +8,7 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
+    "build-static": "next build && next export",
     "type-check": "tsc --noEmit"
   },
   "repository": {
@@ -31,6 +32,9 @@
   },
   "dependencies": {
     "autoprefixer": "^10.2.4",
+    "fast-xml-parser": "^3.19.0",
+    "libxmljs2": "^0.26.6",
+    "libxmljs2-xsd": "^0.26.5",
     "next": "^10.0.6",
     "postcss": "^8.2.5",
     "react": "^17.0.1",

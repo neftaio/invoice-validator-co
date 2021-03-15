@@ -2,10 +2,11 @@ import Description from "@components/Description";
 import InvoiceContext from "@components/InvoiceContext";
 import InvoiceReader from "@components/InvoiceReader";
 import Message from "@components/Message/Message";
+import ValidateXml from "@components/ValidateXml";
 import React, { useState } from "react";
 
 const InvoiceValidator: React.FC = () => {
-  const [message, setMessage] = useState<string | null>("");
+  const [message, setMessage] = useState<Alert[] | null>([]);
   const [openMessage, setOpenMessage] = useState<boolean>(false);
   const [xmlBody, setXmlBody] = useState<string>("");
   const [validationDescription, setValidationDescription] = useState<string>(
@@ -16,7 +17,7 @@ const InvoiceValidator: React.FC = () => {
     setOpenMessage(open);
   };
 
-  const dispatchMessage = (msg: string) => {
+  const dispatchMessage = (msg: Alert[]) => {
     setMessage(msg);
   };
 
@@ -44,6 +45,7 @@ const InvoiceValidator: React.FC = () => {
       <div className="">
         <Description />
         <InvoiceReader />
+        <ValidateXml />
         <Message />
       </div>
     </InvoiceContext.Provider>
